@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace dok_files_drive
@@ -16,7 +14,12 @@ namespace dok_files_drive
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+
+            string key = "login-dok-firebase-adminsdk-v6qz5-d661325854.json";
+            var keyPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, key);
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", keyPath);
+
+            Application.Run(new Splash());
         }
     }
 }
