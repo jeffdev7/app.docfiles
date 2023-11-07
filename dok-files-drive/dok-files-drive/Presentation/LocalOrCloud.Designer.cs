@@ -78,6 +78,7 @@
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // lblExit
             // 
@@ -89,6 +90,7 @@
             this.lblExit.Size = new System.Drawing.Size(15, 15);
             this.lblExit.TabIndex = 4;
             this.lblExit.Text = "X";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // LocalOrCloud
             // 
