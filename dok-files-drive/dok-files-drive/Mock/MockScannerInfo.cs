@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace dok_files_drive.Mock
+﻿namespace dok_files_drive.Mock
 {
-    internal class MockScannerInfo
+    public class MockScannerInfo : IMockScannerInfo
     {
+        public string Name => "HP-MOCK SCANNER";
     }
 }
