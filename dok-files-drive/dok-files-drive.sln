@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dok-files-drive", "dok-files-drive\dok-files-drive.csproj", "{62FBC985-1552-42C2-9426-7ECEF02CF0C3}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setup", "setup\setup.vdproj", "{26AB71FD-B322-454A-8E06-5ACA3102E215}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{62FBC985-1552-42C2-9426-7ECEF02CF0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62FBC985-1552-42C2-9426-7ECEF02CF0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62FBC985-1552-42C2-9426-7ECEF02CF0C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26AB71FD-B322-454A-8E06-5ACA3102E215}.Debug|Any CPU.ActiveCfg = Debug
+		{26AB71FD-B322-454A-8E06-5ACA3102E215}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
