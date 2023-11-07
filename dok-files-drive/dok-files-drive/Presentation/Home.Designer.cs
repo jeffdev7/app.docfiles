@@ -44,6 +44,7 @@
             this.btnDigitalizar.TabIndex = 0;
             this.btnDigitalizar.Text = "Digitalizar";
             this.btnDigitalizar.UseVisualStyleBackColor = false;
+            this.btnDigitalizar.Click += new System.EventHandler(this.btnDigitalizar_Click);
             // 
             // btnViewFiles
             // 
@@ -56,6 +57,7 @@
             this.btnViewFiles.TabIndex = 1;
             this.btnViewFiles.Text = "Ver arquivos em nuvem";
             this.btnViewFiles.UseVisualStyleBackColor = false;
+            this.btnViewFiles.Click += new System.EventHandler(this.btnViewFiles_Click);
             // 
             // Home
             // 
