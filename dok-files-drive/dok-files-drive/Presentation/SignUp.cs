@@ -13,7 +13,7 @@ namespace dok_files_drive
 {
     public partial class SignUp : Form
     {
-        private FirebaseService _firebaseService;
+        private readonly FirebaseService _firebaseService;
         public SignUp()
         {
             InitializeComponent();

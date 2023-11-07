@@ -36,6 +36,7 @@
             // 
             // pdfViewer
             // 
+            this.pdfViewer.AutoSize = true;
             this.pdfViewer.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pdfViewer.CurrentIndex = -1;
             this.pdfViewer.CurrentPageHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(180)))));
@@ -44,7 +45,7 @@
             this.pdfViewer.FormHighlightColor = System.Drawing.Color.Transparent;
             this.pdfViewer.FormsBlendMode = Patagames.Pdf.Enums.BlendTypes.FXDIB_BLEND_MULTIPLY;
             this.pdfViewer.LoadingIconText = "Loading...";
-            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer.Location = new System.Drawing.Point(0, 73);
             this.pdfViewer.MouseMode = Patagames.Pdf.Net.Controls.WinForms.MouseModes.Default;
             this.pdfViewer.Name = "pdfViewer";
             this.pdfViewer.OptimizedLoadThreshold = 1000;
@@ -59,8 +60,8 @@
             this.pdfViewer.ShowCurrentPageHighlight = true;
             this.pdfViewer.ShowLoadingIcon = true;
             this.pdfViewer.ShowPageSeparator = true;
-            this.pdfViewer.Size = new System.Drawing.Size(1360, 716);
-            this.pdfViewer.SizeMode = Patagames.Pdf.Net.Controls.WinForms.SizeModes.FitToWidth;
+            this.pdfViewer.Size = new System.Drawing.Size(1360, 643);
+            this.pdfViewer.SizeMode = Patagames.Pdf.Net.Controls.WinForms.SizeModes.FitToSize;
             this.pdfViewer.TabIndex = 0;
             this.pdfViewer.TextSelectColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(180)))));
             this.pdfViewer.TilesCount = 2;
@@ -94,8 +95,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1360, 716);
             this.Controls.Add(this.btnFinishDigitalization);
-            this.Controls.Add(this.pdfToolStripRotate1);
             this.Controls.Add(this.pdfViewer);
+            this.Controls.Add(this.pdfToolStripRotate1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Visualization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

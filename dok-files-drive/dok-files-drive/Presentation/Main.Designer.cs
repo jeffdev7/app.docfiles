@@ -37,9 +37,9 @@
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnDigitalizar = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.listDevices = new System.Windows.Forms.ListView();
             this.cbmBoxLanguage = new System.Windows.Forms.ComboBox();
             this.lblFileUploaded = new System.Windows.Forms.Label();
+            this.listDevices = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblTitleMain
@@ -89,18 +89,18 @@
             this.btnSearchDevices.Name = "btnSearchDevices";
             this.btnSearchDevices.Size = new System.Drawing.Size(115, 28);
             this.btnSearchDevices.TabIndex = 4;
-            this.btnSearchDevices.Text = "Search devices";
+            this.btnSearchDevices.Text = "Buscar scanners";
             this.btnSearchDevices.UseVisualStyleBackColor = true;
             this.btnSearchDevices.Click += new System.EventHandler(this.btnSearchDevices_Click);
             // 
             // btnUpload
             // 
             this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpload.Location = new System.Drawing.Point(399, 368);
+            this.btnUpload.Location = new System.Drawing.Point(399, 359);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(323, 44);
             this.btnUpload.TabIndex = 5;
-            this.btnUpload.Text = "File Upload";
+            this.btnUpload.Text = "Upload de arquivos";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
@@ -126,15 +126,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // listDevices
-            // 
-            this.listDevices.HideSelection = false;
-            this.listDevices.Location = new System.Drawing.Point(399, 121);
-            this.listDevices.Name = "listDevices";
-            this.listDevices.Size = new System.Drawing.Size(323, 212);
-            this.listDevices.TabIndex = 8;
-            this.listDevices.UseCompatibleStateImageBehavior = false;
-            // 
             // cbmBoxLanguage
             // 
             this.cbmBoxLanguage.FormattingEnabled = true;
@@ -147,11 +138,19 @@
             // 
             this.lblFileUploaded.AutoSize = true;
             this.lblFileUploaded.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFileUploaded.Location = new System.Drawing.Point(409, 419);
+            this.lblFileUploaded.Location = new System.Drawing.Point(405, 415);
             this.lblFileUploaded.Name = "lblFileUploaded";
-            this.lblFileUploaded.Size = new System.Drawing.Size(41, 15);
+            this.lblFileUploaded.Size = new System.Drawing.Size(10, 15);
             this.lblFileUploaded.TabIndex = 41;
-            this.lblFileUploaded.Text = "label1";
+            this.lblFileUploaded.Text = ".";
+            // 
+            // listDevices
+            // 
+            this.listDevices.FormattingEnabled = true;
+            this.listDevices.Location = new System.Drawing.Point(399, 121);
+            this.listDevices.Name = "listDevices";
+            this.listDevices.Size = new System.Drawing.Size(323, 212);
+            this.listDevices.TabIndex = 42;
             // 
             // Main
             // 
@@ -159,9 +158,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(810, 459);
+            this.Controls.Add(this.listDevices);
             this.Controls.Add(this.lblFileUploaded);
             this.Controls.Add(this.cbmBoxLanguage);
-            this.Controls.Add(this.listDevices);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDigitalizar);
             this.Controls.Add(this.btnUpload);
@@ -190,8 +189,8 @@
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Button btnDigitalizar;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ListView listDevices;
         private System.Windows.Forms.ComboBox cbmBoxLanguage;
         private System.Windows.Forms.Label lblFileUploaded;
+        private System.Windows.Forms.ListBox listDevices;
     }
 }
