@@ -1,11 +1,6 @@
 ﻿using dok_files_drive.Enum;
 using dok_files_drive.Mock;
 using dok_files_drive.Service;
-using MigraDoc.DocumentObjectModel;
-using MigraDoc.Rendering;
-using PdfSharp.Drawing;
-using PdfSharp.Drawing.Layout;
-using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,9 +10,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Tesseract;
-using WIA;
-using Section = MigraDoc.DocumentObjectModel.Section;
 
 namespace dok_files_drive
 {
@@ -42,7 +34,7 @@ namespace dok_files_drive
             cbmBoxLanguage.DataSource = languages;
             cbmBoxLanguage.SelectedIndex = 30;
 
-            FileUpload();
+            //FileUpload();
         }
 
         private void btnDigitalizar_Click(object sender, EventArgs e)
@@ -63,16 +55,16 @@ namespace dok_files_drive
 
                     try
                     {
-                        Document document = new Document();
-                        Section section = document.AddSection();
-                        Paragraph paragraph = section.AddParagraph();
+                        MigraDoc.DocumentObjectModel.Document document = new MigraDoc.DocumentObjectModel.Document();
+                        MigraDoc.DocumentObjectModel.Section section = document.AddSection();
+                        MigraDoc.DocumentObjectModel.Paragraph paragraph = section.AddParagraph();
 
                         string fileContent = File.ReadAllText(selectedFilePath);
                         paragraph.AddText(fileContent);
 
-                        PdfDocument pdfDocument = new PdfDocument();
+                        PdfSharp.Pdf.PdfDocument pdfDocument = new PdfSharp.Pdf.PdfDocument();
 
-                        PdfDocumentRenderer renderer = new PdfDocumentRenderer();
+                        MigraDoc.Rendering.PdfDocumentRenderer renderer = new MigraDoc.Rendering.PdfDocumentRenderer();
                         renderer.Document = document;
                         renderer.PdfDocument = pdfDocument;
 
@@ -120,8 +112,8 @@ namespace dok_files_drive
         }
         public string ConvertImageToPdf(string imagePath)
         {
-            var ocrengine = new TesseractEngine(@".\tessdata", "eng", EngineMode.Default);
-            var imgFromUploadedFile = Pix.LoadFromFile(imagePath);
+            var ocrengine = new Tesseract.TesseractEngine(@".\tessdata", "eng", Tesseract.EngineMode.Default);
+            var imgFromUploadedFile = Tesseract.Pix.LoadFromFile(imagePath);
             var response = ocrengine.Process(imgFromUploadedFile);
             var textFromImage = response.GetText();
 
@@ -129,17 +121,17 @@ namespace dok_files_drive
 
             pdfPathForConvertion = Path.Combine(imageDirectory, Path.GetFileNameWithoutExtension(imagePath) + ".pdf");
 
-            PdfDocument document = new PdfDocument();
-            PdfPage page = document.AddPage();
-            XGraphics graphics = XGraphics.FromPdfPage(page);
+            PdfSharp.Pdf.PdfDocument document = new PdfSharp.Pdf.PdfDocument();
+            PdfSharp.Pdf.PdfPage page = document.AddPage();
+            PdfSharp.Drawing.XGraphics graphics = PdfSharp.Drawing.XGraphics.FromPdfPage(page);
 
-            XFont font = new XFont("Arial", 12);
-            XStringFormat format = XStringFormat.TopLeft;
-            XTextFormatter layout = new XTextFormatter(graphics);
-            XRect rect = new XRect(50, 50, page.Width - 100, page.Height - 100);
+            PdfSharp.Drawing.XFont font = new PdfSharp.Drawing.XFont("Arial", 12);
+            PdfSharp.Drawing.XStringFormat format = PdfSharp.Drawing.XStringFormat.TopLeft;
+            PdfSharp.Drawing.Layout.XTextFormatter layout = new PdfSharp.Drawing.Layout.XTextFormatter(graphics);
+            PdfSharp.Drawing.XRect rect = new PdfSharp.Drawing.XRect(50, 50, page.Width - 100, page.Height - 100);
 
             // Format and add the text (extracted from Tesseract) to the page
-            layout.DrawString(textFromImage, font, XBrushes.Black, rect, format);
+            layout.DrawString(textFromImage, font, PdfSharp.Drawing.XBrushes.Black, rect, format);
 
             document.Save(pdfPathForConvertion);
             document.Close();
@@ -154,7 +146,6 @@ namespace dok_files_drive
         {
             return pdfPathForConvertion;
         }
-
         private void btnUpload_Click(object sender, EventArgs e)
         {
             DialogResult result = ofd.ShowDialog();
@@ -165,24 +156,22 @@ namespace dok_files_drive
                 lblFileUploaded.Text = selectedFilePath;
             }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Home home = new Home();
             home.Show();
             this.Hide();
         }
-
         private void btnSearchDevices_Click(object sender, EventArgs e)
         {
             try
             {
-                var deviceManager = new DeviceManager();
-                DeviceInfo availableScanner = null;
+                var deviceManager = new WIA.DeviceManager();
+                WIA.DeviceInfo availableScanner = null;
 
                 for (int i = 1; i <= deviceManager.DeviceInfos.Count; i++)
                 {
-                    if (deviceManager.DeviceInfos[i].Type != WiaDeviceType.ScannerDeviceType)
+                    if (deviceManager.DeviceInfos[i].Type != WIA.WiaDeviceType.ScannerDeviceType)
                         continue;
 
                     availableScanner = deviceManager.DeviceInfos[i];
@@ -208,17 +197,16 @@ namespace dok_files_drive
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void Main_Load(object sender, EventArgs e)
         {
             IMockScannerInfo mockScanner = new MockScannerInfo();
             try
             {
-                var deviceManager = new DeviceManager();
+                var deviceManager = new WIA.DeviceManager();
 
                 for (int i = 1; i <= deviceManager.DeviceInfos.Count; i++)
                 {
-                    if (deviceManager.DeviceInfos[i].Type != WiaDeviceType.ScannerDeviceType)
+                    if (deviceManager.DeviceInfos[i].Type != WIA.WiaDeviceType.ScannerDeviceType)
                     {
                         continue;
                     }
@@ -235,13 +223,13 @@ namespace dok_files_drive
         }
         private void FileUpload()
         {
-            ofd.Filter = "Text Files|*.txt|All Files|*.*";
-            ofd.Title = "Select a File";
+            //ofd.Filter = "Text Files|*.txt|All Files|*.*";
+            //ofd.Title = "Select a File";
 
-            Button btnUpload = new Button();
-            btnUpload.Text = "Upload File";
-            btnUpload.Click += btnUpload_Click;
-            Controls.Add(btnUpload);
+            //Button btnUpload = new Button();
+            //btnUpload.Text = "Upload File";
+            //btnUpload.Click += btnUpload_Click;
+            //Controls.Add(btnUpload);
         }
     }
 }

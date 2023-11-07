@@ -83,6 +83,7 @@
             this.btnSignUP.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSignUP.FlatAppearance.BorderSize = 0;
             this.btnSignUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignUP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUP.Location = new System.Drawing.Point(632, 12);
             this.btnSignUP.Name = "btnSignUP";
             this.btnSignUP.Size = new System.Drawing.Size(89, 42);
@@ -130,19 +131,19 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(90, 271);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(246, 26);
+            this.txtPassword.Size = new System.Drawing.Size(246, 24);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUser
             // 
-            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(90, 188);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(246, 26);
+            this.txtUser.Size = new System.Drawing.Size(246, 24);
             this.txtUser.TabIndex = 2;
             // 
             // lblPassword

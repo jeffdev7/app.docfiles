@@ -98,27 +98,27 @@
             // 
             // txtPasswordSignUp
             // 
-            this.txtPasswordSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordSignUp.Location = new System.Drawing.Point(62, 320);
             this.txtPasswordSignUp.Name = "txtPasswordSignUp";
-            this.txtPasswordSignUp.Size = new System.Drawing.Size(285, 26);
+            this.txtPasswordSignUp.Size = new System.Drawing.Size(285, 24);
             this.txtPasswordSignUp.TabIndex = 4;
             this.txtPasswordSignUp.UseSystemPasswordChar = true;
             // 
             // txtPhone
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(62, 260);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(285, 26);
+            this.txtPhone.Size = new System.Drawing.Size(285, 24);
             this.txtPhone.TabIndex = 3;
             // 
             // txtNewUser
             // 
-            this.txtNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewUser.Location = new System.Drawing.Point(62, 201);
             this.txtNewUser.Name = "txtNewUser";
-            this.txtNewUser.Size = new System.Drawing.Size(285, 26);
+            this.txtNewUser.Size = new System.Drawing.Size(285, 24);
             this.txtNewUser.TabIndex = 2;
             // 
             // btnBack

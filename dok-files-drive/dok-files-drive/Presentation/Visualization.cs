@@ -1,6 +1,5 @@
 ﻿using dok_files_drive.Enum;
 using dok_files_drive.Service;
-using Patagames.Pdf.Net.Controls.WinForms;
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -27,7 +26,7 @@ namespace dok_files_drive
 
             pdfViewer.LoadDocument(file);
 
-            PdfViewer pdfView = new PdfViewer();
+            Patagames.Pdf.Net.Controls.WinForms.PdfViewer pdfView = new Patagames.Pdf.Net.Controls.WinForms.PdfViewer();
             Controls.Add(pdfView);
         }
 
